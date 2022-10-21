@@ -15,8 +15,13 @@ function ThemeContextProvider({children}) {
   });
 
   const changeTheme = () => {
-    setIsDarkMode(false);
-    //setIsDarkMode(!isDarkMode); // We can write this way.
+    setIsDarkMode(!isDarkMode);
+  }
+
+  const state = {
+    isDarkMode: isDarkMode,
+    dark: dark,
+    light: light
   }
   return (
     <ThemeContext.Provider value={{...state, changeTheme : changeTheme}}>
